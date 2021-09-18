@@ -33,11 +33,13 @@ return [
     // @see Slate\Sql\SqlConnectionFactory for supported drivers
     "connections" => [
         "mysql" => [
+            // Specify the default option to make it the preferred
+            // connection when accessing through App::conn()
             "default"  => true,
-            "driver"   => "mysql",
+            "driver"   => "",
             "hostname" => "localhost",
-            "username" => "root",
-            "password" => "AHIIOTYTDI",
+            "username" => "",
+            "password" => "",
         ]
     ],
     
@@ -48,8 +50,7 @@ return [
     //         "key"         => 5151,
     //         "permissions" => 0666,
     //         "rows"        => 5000,
-    //         "conn"        => "mysql",
-    //         "source"      => ["schema", "table"]
+    //         "entity"      => SomeEntity::class
     //     ]
     // ]
 ];
