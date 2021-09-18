@@ -1,0 +1,21 @@
+{
+    "name": "dde16/slate-template",
+    "description": "A template to start using Slate.",
+    "license": "proprietary",
+    "repositories": [
+        { "type": "path", "url": "{SLATE PATH}/slate" }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
+        }
+    },
+    "require": {
+        "dde16/slate": "dev-master"
+    },
+    "options": {
+        "symlink": false
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

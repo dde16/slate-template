@@ -1,0 +1,13 @@
+{
+  "../vue/App.ts": {
+    "file": "assets/App.259c57a8.js",
+    "src": "../vue/App.ts",
+    "isEntry": true,
+    "css": [
+      "assets/App.46a76713.css"
+    ],
+    "assets": [
+      "assets/logo.03d6d6da.png"
+    ]
+  }
+}
