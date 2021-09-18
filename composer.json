@@ -3,7 +3,7 @@
     "description": "A template to start using Slate.",
     "license": "proprietary",
     "repositories": [
-        { "type": "path", "url": "{SLATE PATH}/slate" }
+        { "type": "path", "url": "../__dependencies/slate" }
     ],
     "autoload": {
         "psr-4": {
@@ -11,7 +11,7 @@
         }
     },
     "require": {
-        "dde16/slate": "dev-master"
+        "dde16/slate": "*"
     },
     "options": {
         "symlink": false

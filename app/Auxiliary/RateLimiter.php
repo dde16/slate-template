@@ -1,20 +1,11 @@
 <?php
 
 namespace App\Auxiliary {
-
-    use Slate\Data\IRepository;
-    use Slate\IO\SysvSharedMemoryRepository;
-    use Slate\IO\SysvSharedMemoryTable;
-    use Slate\Mvc\Env;
-    use Slate\Utility\Facade;
     use Slate\Utility\TImitate;
-    use Slate\Utility\TSingleton;
     use Slate\Mvc\App;
 
     final class RateLimiter {
-        use TSingleton;
-
-        public const SINGLETON_CALLABLE = TRUE;
+        use TImitate;
 
         protected string $repository;
 

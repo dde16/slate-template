@@ -36,8 +36,8 @@ return [
             "default"  => true,
             "driver"   => "mysql",
             "hostname" => "localhost",
-            "username" => "",
-            "password" => "",
+            "username" => "root",
+            "password" => "AHIIOTYTDI",
         ]
     ],
     

@@ -24,6 +24,10 @@ namespace App\Controller {
                 : view("/home");
         }
         
+        /**
+         * If there is an exception during the Route execution, the error will be caught
+         * and passed to the postprocessor *always*
+         */
         #[Postprocessor("Catcher")]
         public function catcher(HttpRequest $request, HttpResponse $response, mixed $data, object $next): mixed {
             if(is_object($data) ? \Cls::isSubclassInstanceOf($data, \Throwable::class) : false) {

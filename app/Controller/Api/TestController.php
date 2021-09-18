@@ -33,23 +33,33 @@ namespace App\Controller\Api {
                     // thousands.
                     "@offset" => 0,
                     "@limit" => 2,
+
+                    // You can order by child relationships by the options
+                    // @orderBy(Asc|Desc)
+                    // OR
+                    // @orderBy and @orderDirection 
+                    // You can play around and see the results
+                    "@orderByAsc" => AccountCookie::id(),
+                    // "@orderByDesc" => AccountCookie::id(),
                     
                     // This will determine the join type.
                     // Noted: this is only for this branch.
                     // ! = Inner Join
                     // ? = Left join
+                    // It is advised to use the left join on
+                    // the first branch as little as possible
+                    // due to the implementation of depth limiting
+                    // will impact performance.
                     "@flag" => "!"
 
-                    // This will perform the same as the next comment
-                    // "@callback" => function() {}
+                    // You specify where conditions exclusively to this branch
+                    // using this option. Furthermore using this method
+                    // should increases performance with left joins
+                    // due to the implementation of depth limiting.
+                    // "@where" => function() {}
                 ]
 
-                // Optionally specify a callback after to add specific where
-                // conditions to the branch.
-                // "cookies" => function($query) {
-                //     return $query->where(AccountCookie::id(), "1");
-                // }
-            ]);
+            ])->get();
 
 
             // Use Entity::commit() to commit instances.

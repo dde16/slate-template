@@ -6,6 +6,8 @@ use App\Controller\RedirectController;
 use Slate\Http\HttpRequest;
 use Slate\Http\HttpResponse;
 
+Router::redirect("/", "/home");
+
 Router::add("/api/test/ping", [TestController::class, "ping"]);
 Router::add("/api/test/entity", [TestController::class, "entities"]);
 
@@ -23,6 +25,7 @@ Router::many("/api/methods", [
 
 // Fallback to a controller action if no other routes match
 Router::fallback([RedirectController::class, "index"]);
+
 
 // ... or a view
 // Router::fallback("/404");

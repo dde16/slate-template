@@ -12,7 +12,9 @@ namespace App\Middleware {
         #[Preprocessor("RateLimiter")]
         public function authRateLimiter(HttpRequest $request, object $next): mixed {
             $ip = HttpEnvironment::getClientIpAddress();
-            $decay = \Cls::getConstant(static::class, "RL_DECAY", 60);
+
+            // This works out to a ratelimit of 100 requests per minute
+            $decay       = \Cls::getConstant(static::class, "RL_DECAY", 60);
             $maxAttempts = \Cls::getConstant(static::class, "RL_ATTEMPTS", 100);
 
             if(RateLimiter::getInstance()->tooManyAttempts($ip, $maxAttempts) === true) {
